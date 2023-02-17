@@ -4,6 +4,7 @@ import {ShoppingEditComponent} from "./shopping-edit/shopping-edit.component";
 import {ShoppingListRoutingModule} from "./shopping-list-routing.module";
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
+import {LoggingService} from "../logging.service";
 
 @NgModule({
     declarations: [
@@ -14,7 +15,11 @@ import {SharedModule} from "../shared/shared.module";
         FormsModule,
         ShoppingListRoutingModule,
         SharedModule
-    ]
+    ],
+    // Services provided in Lazy-loaded modules create a separate instance for the module
+    // providers: [
+    //     LoggingService
+    // ]
 })
 export class ShoppingListModule {
 }
